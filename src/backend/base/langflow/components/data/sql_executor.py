@@ -2,7 +2,7 @@ from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from langchain_community.utilities import SQLDatabase
 
 from langflow.custom import CustomComponent
-from langflow.field_typing import Text
+from langflow.schema import Data
 
 
 class SQLExecutorComponent(CustomComponent):
@@ -45,7 +45,7 @@ class SQLExecutorComponent(CustomComponent):
         passthrough: bool = False,
         add_error: bool = False,
         **kwargs,
-    ) -> Text:
+    ) -> Data:
         _ = kwargs
         error = None
         try:
